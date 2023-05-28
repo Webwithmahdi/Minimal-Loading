@@ -1,0 +1,50 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+html {
+  font-size: 62.5%;
+}
+.content {
+  margin: auto;
+}
+.loading {
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+.loading-inner,
+.loading-dot {
+  position: absolute;
+  inset: 0;
+  border: 13px dotted #3b3a3a;
+  border-radius: 50%;
+}
+.loading-dot {
+  border-color: transparent;
+  animation: loading-dot 3s ease-in-out alternate infinite;
+}
+.loading-dot::after {
+  position: absolute;
+  content: "";
+  width: 13px;
+  height: 13px;
+  background-color: lightseagreen;
+  border-radius: 50%;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@keyframes loading-dot {
+  100% {
+    transform: rotate(360deg);
+  }
+}
